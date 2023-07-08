@@ -6,50 +6,65 @@
     --MediumGrey: hsl(216, 12%, 24%);
     --DarkBlue: hsl(213, 19%, 18%);
     --VeryDarkBlue: hsl(216, 12%, 8%);
-    --font-family: 'Overpass', sans-serif;
 }
 
-*{
+*,
+*::after,
+*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-family);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Overpass', sans-serif;
     background: var(--VeryDarkBlue);
     font-size: 15px;
+}
+
+main{
     width: 375px;
     height: 667px;
 }
 
-main{
-    background-color: inherit;    
-    width: inherit;
-    height: inherit;
-          
+.rating-state{
+    display: block;
 }
 
-.thankyou-state {
-    display: none;
-}
 
 .rating-state,
 .thankyou-state {
-    background: var(--DarkBlue);
+    background:var(--DarkBlue);
     width: 327px;
     height: 364px;
     border-radius: 16px;
-    margin: 150px auto 80px;
+    margin: 195px auto 80px;
     padding: 24px;
+}
+
+.rating-state__icon-container,
+.rating-state__number-container__number {
+    background: var(--MediumGrey);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin-bottom: 22px;
+    color: var(--LightGrey);
+    border: none;
 }
 
 .rating-state__title,
 .thankyou-state__title{
     color: var(--White);
+    margin-bottom: 22px;
     font-size: 1.6em;
-    font-weight: 400px;
-    margin-bottom: 15px;
+    font-weight: 400px;  
 }
 
 .rating-state__paragraph,
@@ -59,42 +74,30 @@ main{
     letter-spacing: -.5px;
 }
 
-.rating-state__icon-container,
-.rating-state__number-container__number{
-    background-color: var(--MediumGrey);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    display: grid;
-    place-content: center;
-    margin-bottom: 22px;
-    color: var(--LightGrey);
-}
-
 .rating-state__number-container {
     display: flex;
     justify-content: space-between;
 }
 
-.rating-state__number-container__number:hover{
-    background: var(--LightGrey);
-    color: var(--White);
+.rating-state__number-container__number:hover {
+    background-color:var(--LightGrey);
     cursor: pointer;
+    color: var(--White);
+
 }
 
-.rating-state__number-container__number:focus{
-    background: var(--Orange);
-    color: var(--White);
+.rating-state__number-container__number:focus {
+    background-color:var(--Orange);
     cursor: pointer;
+    color: var(--White);
 }
 
 .rating-state__submit-button {
     width: 100%;
     height: 44px;
+    border-radius: 50px;
     border: none;
-    border-radius: 44px ;
-    background: var(--Orange);
+    background-color: var(--Orange);
     color: var(--White);
     text-transform: uppercase;
     font-weight: 700px;
@@ -102,23 +105,18 @@ main{
 }
 
 .rating-state__submit-button:hover {
-    background: var(--White) ;
-    color: var(--Orange); 
+    background: var(--White);
+    color: var(--Orange);
+    cursor: pointer;
 }
-/*-----------------THANKYOU STATE---------------------------------*/
 
 .thankyou-state{
-    
+    display: none;
     flex-direction: column;
     align-items: center;
 }
 
-.thankyou-state__image {
-    width: 150px;
-    margin-bottom: 24px;
-}
-
-.thankyou-state__result{
+.thankyou-state__result {
     background: var(--MediumGrey);
     width: 170px;
     height: 36px;
@@ -127,55 +125,60 @@ main{
     text-align: center;
     padding: 8px 0;
     margin-bottom: 30px;
-    font-size: 0.9em;
-
+    font-size: .9em;
 }
 
-.thankyou-state__paragraph{
+.thankyou-state__paragraph {
     text-align: center;
-    letter-spacing: -.9px;
-    word-spacing: 3px;
 }
 
-.attribution { 
-    font-size: 11px; text-align: center;
+.attribution {
+    display: block;
+   font-size: 11px;
+   text-align: center;
+   color: var(--White);
 }
 
-.attribution a {
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: hsl(228, 45%, 44%);
+}
+
+.atributtion a {
     color: hsl(228, 45%, 44%);
+    cursor: pointer;
+
+    
 }
 
-/*-----------------DESKTOP DESIGN--------------------------------*/
-
-@media (min-width: 700){
-    
-    body{
-        width: 1440px;
-        height: 800px; 
-    }
+@media (min-width: 600px) {
     main{
-        width: inherit;
-        height: inherit;
+        width: 1440px;
+        height: 800px;
     }
 
     .rating-state,
-    .thankyou-state {
+    .thankyou-state{
         width: 412px;
         height: 412px;
-        padding: 34px;
+        padding: 34px;        
     }
 
     .rating-state__icon-container,
     .rating-state__number-container__number {
-    background-color: var(--MediumGrey);
-    width: 50px;
-    height: 50px;
+        width: 50px;
+        height: 50px;
     }
 
     .rating-state__title,
     .thankyou-state__title {
         font-size: 1.9em;
     }
+
     .rating-state__paragraph,
     .thankyou-state__paragraph {
         font-size: 1.07em;
@@ -185,5 +188,4 @@ main{
         font-size: 1em;
         width: 196px;
     }
-
 }
