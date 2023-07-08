@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+  <main>
+    <!-- Rating state start -->
+  <section class="rating-state">
+    <div class="rating-state__icon-container">
+      <img class="rating-state__icon-container__start-icon" src="./images/icon-star.svg" alt="icon-star">
+    </div> 
+    <h1 class="rating-state__title">How did we do?</h1>
+    <p class="rating-state__paragraph">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+    <div class="rating-state__number-container">
+      <button class="rating-state__number-container__number">1</button>
+      <button class="rating-state__number-container__number">2</button>
+      <button class="rating-state__number-container__number">3</button>
+      <button class="rating-state__number-container__number">4</button>
+      <button class="rating-state__number-container__number">5</button>
+    </div>
+    <button class="rating-state__submit-button">Submit</button>
+       
+  </section>
+  <!-- Rating state end -->
+  <!-- Thank you state start -->
+  <section class="thankyou-state">
+    <img class="thankyou-state__image" src="./images/illustration-thank-you.svg" alt="thankyou-illustration">
+    <div class="thankyou-state__result">
+      You selected <span class="thankyou-state__result--number">4</span> out of 5
+    </div>
+    <h2 class="thankyou-state__title">Thank you!</h2>
+    <p class="thankyou-state__paragraph">We appreciate you taking the time to give a rating. If you ever need more support, 
+      don’t hesitate to get in touch!</p>
+  </section>
+  <!-- Thank you state end -->  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/Arfirpo" target="_blank">Agustín R. Firpo</a>.
+  </footer>
+  </main>  
+  <script src="./src/main.js"></script>
+</body>
+</html>
