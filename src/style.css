@@ -150,9 +150,7 @@ a:hover {
 
 .atributtion a {
     color: hsl(228, 45%, 44%);
-    cursor: pointer;
-
-    
+    cursor: pointer;    
 }
 
 @media (min-width: 600px) {
